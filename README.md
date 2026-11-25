@@ -2,24 +2,16 @@
 
 Site de révision pour l’oral d’anglais (BUT TC) : *Gender quotas in the workplace — Your company, Asics (London), wants to set quotas to help women advance.*
 
-Ce qu’il contient :
+Trois onglets, l’essentiel seulement :
 
-- **Comprendre** : quota ou objectif, plafond de verre, droit britannique, frise des quotas, chiffres du cours mis à jour.
-- **Vocabulaire** : 61 mots (dont ceux du cours), avec traduction, exemple et lecture audio.
-- **Chiffres** : 7 chiffres clés à connaître + 12 en bonus, tous sourcés (vérifiés le 24 novembre 2026).
-- **Arguments** : 6 pour, 6 contre, un compromis, l’ouverture et la conclusion de chaque camp.
-- **Hors travail** : politique, sport, éducation, Japon.
-- **Phrases utiles** : pour donner son avis, interrompre, nuancer, conclure + pièges des francophones.
-- **Simulateur**, **quiz**, **flashcards** et **fiche J-0** imprimable.
+- **Apprendre** : le sujet, 20 mots, 6 chiffres sourcés, 3 arguments par camp (avec ouverture, conclusion et compromis), 3 exemples hors du travail, 10 phrases pour débattre et 5 pièges. Chaque phrase anglaise a sa traduction et sa lecture audio.
+- **S’entraîner** : répondre à voix haute aux répliques de collègues, ou faire un quiz de 8 questions.
+- **Fiche J-0** : tout sur une page, à relire avant le TP (imprimable).
+
+Le bouton **FR** masque les traductions pour se tester. Chiffres vérifiés le 24 novembre 2026.
 
 ## Modifier le contenu
 
-Tout le texte est dans `assets/data.js` (vocabulaire, chiffres, arguments, quiz…). Le reste ne bouge pas :
-
-- `index.html` : la structure de la page ;
-- `assets/style.css` : l’apparence ;
-- `assets/app.js` : l’interactivité (audio, quiz, flashcards, simulateur).
-
-Le site est statique (aucune dépendance, aucun outil de build) : il suffit de pousser les fichiers sur la branche publiée par GitHub Pages.
+Tout le texte est dans `assets/data.js`. Le reste : `index.html` (structure), `assets/style.css` (apparence), `assets/app.js` (interactivité). Site statique, sans dépendance.
 
 Polices : Barlow et Barlow Condensed (SIL Open Font License, voir `assets/fonts/LICENSE-barlow.txt`).
