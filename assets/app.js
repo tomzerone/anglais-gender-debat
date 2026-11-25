@@ -163,18 +163,11 @@
   }
 
   function argHTML(a, side) {
-    return `<details class="arg arg--${side}">
-      <summary>
-        <span class="arg__t"><span class="arg__en" lang="en">${esc(a.en)}</span><span class="arg__fr">${esc(a.fr)}</span></span>
-        <span class="arg__chev">${ICON.chevron}</span>
-      </summary>
-      <div class="arg__body">
-        <div class="blk"><h4>Dis-le</h4>${bi(a.say, a.sayTr)}</div>
-        <div class="blk"><h4>La preuve</h4>${bi(a.proof, a.proofTr)}</div>
-        <div class="blk blk--them"><h4>Si un collègue te répond…</h4>${bi(a.theySay, a.theySayTr)}</div>
-        <div class="blk blk--you"><h4>… tu réponds</h4>${bi(a.answer, a.answerTr)}</div>
-      </div>
-    </details>`;
+    return `<li class="arg arg--${side}">
+      <h3 class="arg__t"><span class="arg__en" lang="en">${esc(a.en)}</span><span class="arg__fr tr">${esc(a.fr)}</span></h3>
+      <div class="arg__idea">${bi(a.say, a.sayTr)}</div>
+      <div class="arg__proof">${bi(a.proof, a.proofTr)}</div>
+    </li>`;
   }
 
   function drawArgs() {
@@ -183,8 +176,8 @@
     const c = camp === 'contre' ? 'contre' : 'pour';
     $$('#s-arguments [data-camp]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.camp === c)));
     box.innerHTML = `
-      <div class="speech speech--${c}"><h3>Ton ouverture, à connaître presque par cœur</h3>${bi(D.openings[c].en, D.openings[c].tr)}</div>
-      <div class="args">${D.args[c].map((a) => argHTML(a, c)).join('')}</div>
+      <div class="speech speech--${c}"><h3>Ton ouverture : trois phrases à connaître par cœur</h3>${bi(D.openings[c].en, D.openings[c].tr)}</div>
+      <ol class="args">${D.args[c].map((a) => argHTML(a, c)).join('')}</ol>
       <div class="speech speech--${c}"><h3>Ta conclusion</h3>${bi(D.closings[c].en, D.closings[c].tr)}</div>`;
   }
 
@@ -230,7 +223,7 @@
 
         <section class="sec" id="s-arguments">
           <h2>4. Les arguments</h2>
-          <p class="muted">Trois arguments par camp, chacun avec une preuve et ta réponse à l’objection la plus probable.</p>
+          <p class="muted">Six arguments par camp, chacun en deux phrases courtes : l’idée, puis la preuve. Pour répondre à tes collègues, entraîne-toi dans l’onglet S’entraîner.</p>
           ${campSeg([['pour', 'Camp pour'], ['contre', 'Camp contre']], 'Camp affiché', argCamp)}
           <div id="argBox"></div>
           <div class="speech speech--both"><h3>Le compromis, utile aux deux camps</h3>${bi(D.middle.en, D.middle.tr)}</div>
@@ -455,7 +448,7 @@
               <h2>${s === 'pour' ? 'Camp pour' : 'Camp contre'}</h2>
               <h3>Ouverture</h3>
               ${bi(D.openings[s].en, D.openings[s].tr)}
-              <h3>Tes trois arguments</h3>
+              <h3>Tes six arguments</h3>
               <ol class="fiche-args">
                 ${D.args[s].map((a) => `<li><span class="fiche-args__en" lang="en">${esc(a.en)}</span><span class="fiche-args__fr tr">${esc(a.fr)}</span><span class="fiche-args__fig" lang="en">${esc(a.figure)}</span></li>`).join('')}
               </ol>
